@@ -43,3 +43,30 @@ void _pickDate(BuildContext context) async {
       }
     }
   }
+
+  void _addTask() {
+  setState(() {
+      _isDateSelected = _selectedDate != null; // Validasi Task Date
+    });
+
+  if (_key.currentState!.validate() && _selectedDate != null) {
+    setState(() {
+      listTugas.add({
+        'name': _taskController.text,
+        'date': _selectedDate,
+        'done': false,
+      });
+      _taskController.clear();
+      _selectedDate = null;
+    });
+
+    // Tampilkan Snackbar
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Task added successfully"),
+        backgroundColor: Colors.teal,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+}
