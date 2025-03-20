@@ -86,6 +86,20 @@ void _pickDate(BuildContext context) async {
         ),
         centerTitle: true,
       ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _key,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
