@@ -149,6 +149,8 @@ void _pickDate(BuildContext context) async {
                     ),
                   ],
                  ),
+                 const SizedBox(height: 20),
+                 const Text("List Tasks", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
