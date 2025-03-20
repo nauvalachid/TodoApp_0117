@@ -23,4 +23,23 @@ void _pickDate(BuildContext context) async {
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     );
-}
+    if (pickedDate != null) {
+      TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+      );
+
+      if (pickedTime != null) {
+        setState(() {
+          _selectedDate = DateTime(
+            pickedDate.year,
+            pickedDate.month,
+            pickedDate.day,
+            pickedTime.hour,
+            pickedTime.minute,
+          );
+          _isDateSelected = true; // Validasi berhasil
+        });
+      }
+    }
+  }
