@@ -180,6 +180,10 @@ void _pickDate(BuildContext context) async {
                               ),
                             ],
                           ),
+                          trailing: Checkbox(
+                            value: listTugas[index]['done'],
+                            onChanged: (value) => _toggleTaskStatus(index),
+                          ),
                         ),
                       );
                     },
