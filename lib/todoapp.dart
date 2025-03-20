@@ -70,3 +70,9 @@ void _pickDate(BuildContext context) async {
     );
   }
 }
+
+  void _toggleTaskStatus(int index) {
+    setState(() {
+      listTugas[index]['done'] = !listTugas[index]['done'];
+    });
+  }
