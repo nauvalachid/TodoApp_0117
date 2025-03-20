@@ -136,6 +136,15 @@ void _pickDate(BuildContext context) async {
                         },
                       ),
                     ),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: _addTask,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 53, 154, 201),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                      ),
+                      child: const Text("Submit", style: TextStyle(color: Colors.white)),
+                    ),
                   ],
                  ),
               ],
