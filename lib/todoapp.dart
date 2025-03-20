@@ -110,6 +110,12 @@ void _pickDate(BuildContext context) async {
                     ),
                   ],
                 ),
+                if (!_isDateSelected)
+                  const Text(
+                    "Please select a date",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                const SizedBox(height: 10),
               ],
             ),
           ),
