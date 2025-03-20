@@ -184,6 +184,7 @@ void _pickDate(BuildContext context) async {
                             value: listTugas[index]['done'],
                             onChanged: (value) => _toggleTaskStatus(index),
                           ),
+                           tileColor: Colors.grey[200],
                         ),
                       );
                     },
