@@ -151,6 +151,24 @@ void _pickDate(BuildContext context) async {
                  ),
                  const SizedBox(height: 20),
                  const Text("List Tasks", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,fontFamily: 'Poppins')),
+                 Expanded(
+                  child: ListView.builder(
+                    itemCount: listTugas.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(
+                            listTugas[index]['name'],
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        );
+                    },
+                  ),
+                 ),
               ],
             ),
           ),
