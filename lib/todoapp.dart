@@ -128,6 +128,12 @@ void _pickDate(BuildContext context) async {
                             borderSide: BorderSide(color: Colors.red),
                           ),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter some text";
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
