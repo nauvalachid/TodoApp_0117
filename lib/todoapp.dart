@@ -94,7 +94,7 @@ void _pickDate(BuildContext context) async {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, fontFamily: 'Poppins', color: Color.fromARGB(255, 0, 0, 0))),
                  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -123,9 +123,11 @@ void _pickDate(BuildContext context) async {
                         controller: _taskController,
                         decoration: const InputDecoration(
                           labelText: "Task Name",
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
+                          ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red),
+                            borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                           ),
                         ),
                         validator: (value) {
@@ -143,7 +145,7 @@ void _pickDate(BuildContext context) async {
                         backgroundColor: const Color.fromARGB(255, 53, 154, 201),
                         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                       ),
-                      child: const Text("Submit", style: TextStyle(color: Colors.white)),
+                      child: const Text("Submit", style: TextStyle(color: Colors.white,fontFamily: 'Poppins')),
                     ),
                   ],
                  ),
