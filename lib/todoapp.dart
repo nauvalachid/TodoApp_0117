@@ -7,3 +7,11 @@ class TodoApp extends StatefulWidget {
   @override
   State<TodoApp> createState() => _TodoAppState();
 }
+
+class _TodoAppState extends State<TodoApp> {
+  final _key = GlobalKey<FormState>();
+  final TextEditingController _taskController = TextEditingController();
+  List<Map<String, dynamic>> listTugas = [];
+  DateTime? _selectedDate;
+  bool _isDateSelected = true; // Untuk validasi
+}
