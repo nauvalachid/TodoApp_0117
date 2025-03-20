@@ -13,8 +13,7 @@ class _TodoAppState extends State<TodoApp> {
   final TextEditingController _taskController = TextEditingController();
   List<Map<String, dynamic>> listTugas = [];
   DateTime? _selectedDate;
-  bool _isDateSelected = true; // Untuk validasi
-}
+bool _isDateSelected = true; // Untuk validasi
 
 void _pickDate(BuildContext context) async {
     DateTime? pickedDate = await showDatePicker(
@@ -76,3 +75,17 @@ void _pickDate(BuildContext context) async {
       listTugas[index]['done'] = !listTugas[index]['done'];
     });
   }
+
+   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Form Page',
+          style: TextStyle(fontSize: 25, fontFamily: 'Poppins', color: Color.fromARGB(255, 0, 0, 0)),
+        ),
+        centerTitle: true,
+      ),
+    );
+  }
+}
