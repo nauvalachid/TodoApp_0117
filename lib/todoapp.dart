@@ -164,8 +164,24 @@ void _pickDate(BuildContext context) async {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Deadline: " +
+                                    DateFormat('dd-MM-yyyy HH:mm').format(listTugas[index]['date']),
+                                style: const TextStyle(color: Colors.blueGrey),
+                              ),
+                              Text(
+                                listTugas[index]['done'] ? "Done" : "Not Done",
+                                style: TextStyle(
+                                  color: listTugas[index]['done'] ? Colors.green : Colors.red,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        );
+                      );
                     },
                   ),
                  ),
