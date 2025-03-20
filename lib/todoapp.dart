@@ -95,6 +95,21 @@ void _pickDate(BuildContext context) async {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      onPressed: () => _pickDate(context),
+                      child: Text(_selectedDate == null
+                          ? "Select a date and time"
+                          : DateFormat('dd-MM-yyyy HH:mm').format(_selectedDate!)),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.calendar_today),
+                      onPressed: () => _pickDate(context),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
