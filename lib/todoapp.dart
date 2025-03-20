@@ -116,6 +116,22 @@ void _pickDate(BuildContext context) async {
                     style: TextStyle(color: Colors.red),
                   ),
                 const SizedBox(height: 10),
+                 Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _taskController,
+                        decoration: const InputDecoration(
+                          labelText: "Task Name",
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                 ),
               ],
             ),
           ),
