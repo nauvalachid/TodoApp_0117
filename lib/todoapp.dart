@@ -15,3 +15,12 @@ class _TodoAppState extends State<TodoApp> {
   DateTime? _selectedDate;
   bool _isDateSelected = true; // Untuk validasi
 }
+
+void _pickDate(BuildContext context) async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+}
