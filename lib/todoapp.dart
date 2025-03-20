@@ -82,7 +82,7 @@ void _pickDate(BuildContext context) async {
       appBar: AppBar(
         title: const Text(
           'Form Page',
-          style: TextStyle(fontSize: 25, fontFamily: 'Poppins', color: Color.fromARGB(255, 0, 0, 0)),
+          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: Color.fromARGB(255, 0, 0, 0)),
         ),
         centerTitle: true,
       ),
@@ -124,9 +124,11 @@ void _pickDate(BuildContext context) async {
                         decoration: const InputDecoration(
                           labelText: "Task Name",
                           border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
                             borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                           ),
                           focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
                             borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                           ),
                         ),
@@ -156,12 +158,17 @@ void _pickDate(BuildContext context) async {
                     itemCount: listTugas.length,
                     itemBuilder: (context, index) {
                       return Card(
+                        shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        ),
+                        clipBehavior: Clip.antiAlias,
                         child: ListTile(
                           title: Text(
                             listTugas[index]['name'],
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'Poppins'
                             ),
                           ),
                           subtitle: Column(
@@ -170,21 +177,26 @@ void _pickDate(BuildContext context) async {
                               Text(
                                 "Deadline: " +
                                     DateFormat('dd-MM-yyyy HH:mm').format(listTugas[index]['date']),
-                                style: const TextStyle(color: Colors.blueGrey),
+                                style: const TextStyle(color: Color.fromARGB(255, 134, 140, 144),fontWeight: FontWeight.bold,fontFamily: 'Poppins'),
                               ),
                               Text(
                                 listTugas[index]['done'] ? "Done" : "Not Done",
                                 style: TextStyle(
-                                  color: listTugas[index]['done'] ? Colors.green : Colors.red,
+                                  color: listTugas[index]['done'] ? const Color.fromARGB(255, 25, 114, 28) : const Color.fromARGB(255, 147, 35, 27),
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins'
                                 ),
                               ),
                             ],
                           ),
-                          trailing: Checkbox(
-                            value: listTugas[index]['done'],
-                            onChanged: (value) => _toggleTaskStatus(index),
+                          trailing: IconButton(
+                                icon: Icon(
+                                  listTugas[index]['done'] ? Icons.check_circle : Icons.radio_button_unchecked,
+                                  color: listTugas[index]['done'] ? Colors.green : const Color.fromARGB(255, 111, 111, 111),
+                                ),
+                            onPressed: () => _toggleTaskStatus(index),
                           ),
-                           tileColor: Colors.grey[200],
+                           tileColor: const Color.fromARGB(255, 189, 220, 235),
                         ),
                       );
                     },
